@@ -62,7 +62,6 @@ def download_file(file_hash):
 @auth.login_required
 def delete_file(file_hash):
     file_path = get_file_path(STORE_DIR, file_hash)
-    print(file_path)
     if os.path.exists(file_path):
         os.remove(file_path)
         return jsonify({"message": "File deleted"}), 200
